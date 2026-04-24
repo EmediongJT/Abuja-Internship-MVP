@@ -57,10 +57,19 @@
 
             list.appendChild(li);
             input.value = "";  // Clear the box
-        
 
+            // --- Health Tracker Logic ---  //
+            let count = 0;
+            function addWater() {
+                count++;
+                document.getElementById('water-count').innerText = count;
 
-            
+                // Visual feedback when user hits 8 cups
+                if (count >= 8) {
+                    document.getElementById('water-count') .classList.add("text-blue-500", "font-bold");
+                }
+            }
+                
         }
     </script>
 </body>
