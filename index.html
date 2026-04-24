@@ -37,6 +37,29 @@
     <script>
         //---Expense Tracker Logic ---
         function addExpense(){
+            const input = document.getElementById('expense-input');
+            const list = document.getElementById('expense-list');
+
+            if (input.value.trim() === "") {
+                alert("Please enter an amount!");
+                return;
+            }
+
+            //Remove the placeholder message if it's there
+            if (list.innerHTML.includes("No expenses added yet")) {
+                list.innerHTML = "";
+            }
+
+            // Create new list item
+            const li = document.createElement('li');
+            li.className = "flex justify-between border-b py-2 text blue-700 font-medium";
+            li.innerHTML = '<span>Expense Item</span> <span>${input.value}</span>';
+
+            list.appendChild(li);
+            input.value = "";  // Clear the box
+        
+
+
             
         }
     </script>
