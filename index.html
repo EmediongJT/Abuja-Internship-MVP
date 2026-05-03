@@ -52,25 +52,37 @@
 
             // Create new list item
             const li = document.createElement('li');
-            li.className = "flex justify-between border-b py-2 text blue-700 font-medium";
-            li.innerHTML = '<span>Expense Item</span> <span>${input.value}</span>';
+            li.className = "flex justify-between border-b py-2 text-blue-700 font-medium";
+            li.innerHTML = `<span>Expense Item</span> <span>$${input.value}</span>`;
 
             list.appendChild(li);
             input.value = "";  // Clear the box
 
             // --- Health Tracker Logic ---  //
             let count = 0;
+
             function addWater() {
                 count++;
+                const waterDisplay = document.getElementById('water-count');
+
+                if (waterDisplay) {
+                    waterDisplay.innerText = count;
+
+                    if (count >= 8) {
+                        waterDisplay.classList.add("text-blue-500", "font-bold");
+                    }
+                } else {
+                    console.error("Could not find the water-count element!")
+                }
                 document.getElementById('water-count').innerText = count;
 
                 // Visual feedback when user hits 8 cups
-                if (count >= 8) {
+                
                     document.getElementById('water-count') .classList.add("text-blue-500", "font-bold");
                 }
             }
                 
-        }
+        
     </script>
 </body>
 </html>
