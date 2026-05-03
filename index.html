@@ -36,7 +36,7 @@
 
     <script>
         //---Expense Tracker Logic ---
-        function addExpense(){
+        function addExpense() {
             const input = document.getElementById('expense-input');
             const list = document.getElementById('expense-list');
 
@@ -57,6 +57,7 @@
 
             list.appendChild(li);
             input.value = "";  // Clear the box
+        }
 
             // --- Health Tracker Logic ---  //
             let count = 0;
@@ -65,22 +66,18 @@
                 count++;
                 const waterDisplay = document.getElementById('water-count');
 
+                console.log ("Current water count is: " + count);
+
                 if (waterDisplay) {
                     waterDisplay.innerText = count;
-
                     if (count >= 8) {
                         waterDisplay.classList.add("text-blue-500", "font-bold");
                     }
                 } else {
                     console.error("Could not find the water-count element!")
                 }
-                document.getElementById('water-count').innerText = count;
-
-                // Visual feedback when user hits 8 cups
-                
-                    document.getElementById('water-count') .classList.add("text-blue-500", "font-bold");
-                }
-            }
+             }
+            
                 
         
     </script>
